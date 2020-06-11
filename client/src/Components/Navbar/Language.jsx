@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { textColor } from '../../variables'
+import { StyleContext } from '../../contexts/StyleContext'
 
 const LanguageSC = styled.div`
   display: flex;
@@ -13,11 +13,12 @@ const Btn = styled.div`
 `
 
 const Language = () => {
+  const { colors } = useContext(StyleContext)
   const changeLanguage = (lang) => {
     alert('Переключение языка временно недоступно')
   }
   return (
-    <LanguageSC textColor={textColor}>
+    <LanguageSC textColor={colors.textColor}>
       <Btn onClick={() => changeLanguage('RU')}>RU</Btn>/
       <Btn onClick={() => changeLanguage('EN')}>EN</Btn>
     </LanguageSC>

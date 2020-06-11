@@ -2,14 +2,15 @@ import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import Main from './Main'
 import Footer from '../Footer/Footer'
+import { StyleContextProvider } from '../../contexts/StyleContext'
 
 const Home = () => {
   return (
-    <div>
+    <StyleContextProvider>
       <Navbar />
       <Main />
       <Footer />
-    </div>
+    </StyleContextProvider>
   )
 }
 

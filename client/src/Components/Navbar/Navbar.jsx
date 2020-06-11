@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import Logo from './Logo'
 import Language from './Language'
-import { mainColor } from '../../variables'
+import { StyleContext } from '../../contexts/StyleContext'
 
 const NavbarSC = styled.div`
   display: flex;
@@ -12,8 +12,9 @@ const NavbarSC = styled.div`
 `
 
 const Navbar = () => {
+  const { colors } = useContext(StyleContext)
   return (
-    <NavbarSC mainColor={mainColor}>
+    <NavbarSC mainColor={colors.mainColor}>
       <Logo />
       <Language />
     </NavbarSC>
