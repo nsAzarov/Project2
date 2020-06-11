@@ -1,17 +1,25 @@
-import React from 'react'
-import Navbar from '../Navbar/Navbar'
-import Main from './Main'
-import Footer from '../Footer/Footer'
-import { StyleContextProvider } from '../../contexts/StyleContext'
+import React, { useContext } from 'react'
+import styled from 'styled-components'
+import ContentArea from './Content/ContentArea'
+import { StyleContext } from '../../contexts/StyleContext'
+import { FileContextProvider } from '../../contexts/FileContext'
 
-const Home = () => {
+const MainSC = styled.div`
+  min-height: ${(props) => props.minHeight}px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const Main = () => {
+  const { minHeight } = useContext(StyleContext)
   return (
-    <StyleContextProvider>
-      <Navbar />
-      <Main />
-      <Footer />
-    </StyleContextProvider>
+    <MainSC minHeight={minHeight}>
+      <FileContextProvider>
+        <ContentArea />
+      </FileContextProvider>
+    </MainSC>
   )
 }
 
-export default Home
+export default Main

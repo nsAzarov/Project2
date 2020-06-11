@@ -1,11 +1,10 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
 import { Text } from '../reusableStyledComponents'
 import styled from 'styled-components'
-import LogoImg from './LogoImg'
+import LogoImg from '../Other/LogoImg'
 import { StyleContext } from '../../contexts/StyleContext'
 
-const LogoSC = styled(Link)`
+const LogoSC = styled.div`
   display: flex;
   align-items: center;
 `
@@ -14,7 +13,12 @@ const Logo = () => {
   const { colors } = useContext(StyleContext)
   return (
     <LogoSC to='/'>
-      <LogoImg />
+      <LogoImg
+        square={colors.textColor}
+        person={colors.textColor}
+        height={50}
+        width={40}
+      />
       <Text textColor={colors.textColor}>Who Is That?</Text>
     </LogoSC>
   )
