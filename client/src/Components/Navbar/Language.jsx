@@ -13,14 +13,11 @@ const Btn = styled.div`
 `
 
 const Language = () => {
-  const { colors } = useContext(StyleContext)
-  const changeLanguage = (lang) => {
-    alert('Переключение языка временно недоступно')
-  }
+  const { colors, setLanguage } = useContext(StyleContext)
   return (
     <LanguageSC textColor={colors.textColor}>
-      <Btn onClick={() => changeLanguage('RU')}>RU</Btn>/
-      <Btn onClick={() => changeLanguage('EN')}>EN</Btn>
+      <Btn onClick={() => setLanguage('RU')}>RU</Btn>/
+      <Btn onClick={() => setLanguage('EN')}>EN</Btn>
     </LanguageSC>
   )
 }

@@ -10,7 +10,7 @@ export const StyleContextProvider = ({ children }) => {
   })
   const [language, setLanguage] = useState('RU')
   return (
-    <StyleContext.Provider value={{ colors, language }}>
+    <StyleContext.Provider value={{ colors, language, setLanguage }}>
       {children}
     </StyleContext.Provider>
   )

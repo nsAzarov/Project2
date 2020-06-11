@@ -13,13 +13,17 @@ const FooterSC = styled.div`
 `
 
 const Footer = () => {
-  const { colors } = useContext(StyleContext)
+  const { colors, language } = useContext(StyleContext)
   return (
     <FooterSC mainColor={colors.mainColor}>
       <Text textColor={colors.textColor}>
-        © 2020 WhoIsThat. All rights reserved.
+        {language === 'RU'
+          ? '© 2020 WhoIsThat. Все права защищены'
+          : '© 2020 WhoIsThat. All rights reserved.'}
       </Text>
-      <Text textColor={colors.textColor}>Техподдержка: @почта</Text>
+      <Text textColor={colors.textColor}>
+        {language === 'RU' ? 'Техподдержка: @почта' : 'Support: @email'}
+      </Text>
     </FooterSC>
   )
 }
