@@ -10,6 +10,7 @@ export const ContentAreaSC = styled.div`
 
 export const ButtonsAreaSC = styled.div`
   width: 100%;
+  margin-bottom: 45px;
   display: flex;
   justify-content: space-between;
 `
