@@ -18,7 +18,9 @@ export const StyleContextProvider = ({ children }) => {
     )
   }, [])
   return (
-    <StyleContext.Provider value={{ colors, language, setLanguage, minHeight }}>
+    <StyleContext.Provider
+      value={{ colors, setColors, language, setLanguage, minHeight }}
+    >
       {children}
     </StyleContext.Provider>
   )

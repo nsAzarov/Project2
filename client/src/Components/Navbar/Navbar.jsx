@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import Logo from './Logo'
 import Language from './Language'
 import { StyleContext } from '../../contexts/StyleContext'
+import RightSide from './RightSide'
+import ColorPicker from './ColorPicker'
 
 const NavbarSC = styled.div`
   display: flex;
@@ -16,7 +18,10 @@ const Navbar = () => {
   return (
     <NavbarSC mainColor={colors.mainColor}>
       <Logo />
-      <Language />
+      <RightSide>
+        <Language />
+        <ColorPicker />
+      </RightSide>
     </NavbarSC>
   )
 }
