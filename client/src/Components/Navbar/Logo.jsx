@@ -12,7 +12,6 @@ const LogoSC = styled.div`
 
 const Logo = () => {
   const { colors } = useContext(StyleContext)
-  console.log(colors)
   return (
     <LogoSC>
       <LogoImg

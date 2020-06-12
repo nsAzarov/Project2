@@ -1,20 +1,18 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import ContentArea from './Content/ContentArea'
-import { StyleContext } from '../../contexts/StyleContext'
 import { FileContextProvider } from '../../contexts/FileContext'
 
 const MainSC = styled.div`
-  min-height: ${(props) => props.minHeight}px;
+  min-height: calc(100vh - 118px);
   display: flex;
   justify-content: center;
   align-items: center;
 `
 
 const Main = () => {
-  const { minHeight } = useContext(StyleContext)
   return (
-    <MainSC minHeight={minHeight}>
+    <MainSC>
       <FileContextProvider>
         <ContentArea />
       </FileContextProvider>

@@ -9,15 +9,7 @@ export const StyleContextProvider = ({ children }) => {
     textColor: '#fff',
   })
   const [language, setLanguage] = useState('RU')
-  const [minHeight, setMinHeight] = useState(800)
 
-  useEffect(() => {
-    const navbarHeight = 58
-    const footerHeight = 60
-    setMinHeight(
-      document.documentElement.clientHeight - navbarHeight - footerHeight
-    )
-  }, [])
   useEffect(() => {
     let lang = localStorage.getItem('language')
     if (!lang) {
@@ -32,7 +24,11 @@ export const StyleContextProvider = ({ children }) => {
       localStorage.setItem('mainColor', '#8C3091')
       mColor = '#8C3091'
     }
-    setColors({ ...colors, mainColor: mColor })
+    setColors((prev) => {
+      let newColors = { ...prev }
+      newColors.mainColor = mColor
+      return newColors
+    })
   }, [])
 
   const changeLanguage = (lang) => {
@@ -47,7 +43,7 @@ export const StyleContextProvider = ({ children }) => {
 
   return (
     <StyleContext.Provider
-      value={{ colors, changeColor, language, changeLanguage, minHeight }}
+      value={{ colors, changeColor, language, changeLanguage }}
     >
       {children}
     </StyleContext.Provider>

@@ -35,7 +35,7 @@ const UploadFile = styled.div`
 
 const ButtonsArea = () => {
   const { colors, language } = useContext(StyleContext)
-  const { handleImageChange } = useContext(FileContext)
+  const { handleImageChange, sendFile } = useContext(FileContext)
   return (
     <ButtonsAreaSC>
       <UploadFile mainColor={colors.mainColor} textColor={colors.textColor}>
@@ -44,7 +44,11 @@ const ButtonsArea = () => {
           <span>{language === 'RU' ? 'Загрузить фото' : 'Upload photo'}</span>
         </label>
       </UploadFile>
-      <Button mainColor={colors.mainColor} textColor={colors.textColor}>
+      <Button
+        mainColor={colors.mainColor}
+        textColor={colors.textColor}
+        onClick={() => sendFile()}
+      >
         {language === 'RU' ? 'Определить личность' : 'Identify person'}
       </Button>
     </ButtonsAreaSC>

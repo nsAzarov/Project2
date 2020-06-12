@@ -2,14 +2,6 @@ import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import { StyleContext } from '../../contexts/StyleContext'
 
-const ColorPickerSC = styled.div`
-  height: 30px;
-  width: 30px;
-  border: 3px solid whitesmoke;
-  background-color: ${(props) => props.mainColor};
-  position: relative;
-`
-
 const Plate = styled.div`
   position: absolute;
   top: 50px;

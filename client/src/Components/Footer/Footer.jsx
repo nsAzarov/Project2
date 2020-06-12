@@ -4,8 +4,11 @@ import styled from 'styled-components'
 import { StyleContext } from '../../contexts/StyleContext'
 
 const FooterSC = styled.div`
+  position: sticky;
+  bottom: 0;
   background-color: ${(props) => props.mainColor};
   height: 60px;
+  /* margin-top: -60px; */
   display: flex;
   justify-content: space-between;
   align-items: center;

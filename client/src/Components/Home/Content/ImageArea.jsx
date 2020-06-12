@@ -75,7 +75,7 @@ const ImageArea = () => {
     <ImageAreaSC>
       {imagePreviewUrl ? (
         <Image>
-          <img src={imagePreviewUrl} />
+          <img src={imagePreviewUrl} alt='person' />
         </Image>
       ) : (
         <LogoWrapper>
