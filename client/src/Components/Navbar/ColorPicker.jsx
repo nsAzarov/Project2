@@ -33,7 +33,7 @@ const BtnColor = styled.div`
 `
 
 const ColorPicker = () => {
-  const { colors, setColors } = useContext(StyleContext)
+  const { colors, changeColor } = useContext(StyleContext)
   const [plateOpened, setPlateOpened] = useState(false)
   const colorsArray = [
     '#3667b5',
@@ -55,8 +55,9 @@ const ColorPicker = () => {
         <Plate>
           {colorsArray.map((color) => (
             <BtnColor
+              key={color}
               mainColor={color}
-              onClick={() => setColors({ ...colors, mainColor: color })}
+              onClick={() => changeColor(color)}
             />
           ))}
         </Plate>

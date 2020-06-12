@@ -80,7 +80,7 @@ const ImageArea = () => {
       ) : (
         <LogoWrapper>
           <LogoImg
-            square={colors.textColor}
+            square={colors.secondaryColor}
             person={colors.mainColor}
             height={logoSize.height}
             width={logoSize.width}
