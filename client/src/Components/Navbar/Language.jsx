@@ -6,6 +6,9 @@ const LanguageSC = styled.div`
   display: flex;
   margin-right: 60px;
   color: ${(props) => props.textColor};
+  @media (max-width: 425px) {
+    margin-right: 10px;
+  }
 `
 
 const Btn = styled.div`

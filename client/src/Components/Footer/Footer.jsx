@@ -10,6 +10,20 @@ const FooterSC = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 50px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+  @media (max-width: 768px) {
+    font-size: 18px;
+    line-height: 20px;
+    padding: 0 30px;
+  }
+  @media (max-width: 425px) {
+    font-size: 16px;
+    line-height: 30px;
+    flex-direction: column;
+    padding: 0;
+  }
 `
 
 const Footer = () => {

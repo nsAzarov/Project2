@@ -1,13 +1,14 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { StyleContext } from '../../contexts/StyleContext'
 
 const LogoImgSC = styled.div`
   margin: 2px 20px;
+  @media (max-width: 425px) {
+    margin: 2px 10px;
+  }
 `
 
 const LogoImg = ({ square, person, height, width }) => {
-  const { colors } = useContext(StyleContext)
   return (
     <LogoImgSC>
       <svg

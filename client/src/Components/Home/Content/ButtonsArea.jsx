@@ -26,21 +26,26 @@ const UploadFile = styled.div`
     height: 100%;
     cursor: pointer;
   }
+  @media (max-width: 425px) {
+    flex-direction: column;
+    width: 90%;
+    margin: 10px 5%;
+  }
 `
 
 const ButtonsArea = () => {
-  const { colors } = useContext(StyleContext)
+  const { colors, language } = useContext(StyleContext)
   const { handleImageChange } = useContext(FileContext)
   return (
     <ButtonsAreaSC>
       <UploadFile mainColor={colors.mainColor} textColor={colors.textColor}>
         <label>
           <input type='file' onChange={(e) => handleImageChange(e)} />
-          <span>Загрузить фото</span>
+          <span>{language === 'RU' ? 'Загрузить фото' : 'Upload photo'}</span>
         </label>
       </UploadFile>
       <Button mainColor={colors.mainColor} textColor={colors.textColor}>
-        Определить личность
+        {language === 'RU' ? 'Определить личность' : 'Identify person'}
       </Button>
     </ButtonsAreaSC>
   )

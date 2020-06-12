@@ -10,9 +10,15 @@ export const ContentAreaSC = styled.div`
 
 export const ButtonsAreaSC = styled.div`
   width: 100%;
-  margin-bottom: 45px;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 425px) {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  @media (min-width: 425px) {
+    margin-bottom: 45px;
+  }
 `
 
 export const Button = styled.button`
@@ -27,4 +33,9 @@ export const Button = styled.button`
   color: ${(props) => props.textColor};
   font-size: 24px;
   line-height: 28px;
+  @media (max-width: 425px) {
+    flex-direction: column;
+    width: 90%;
+    margin: 0 5%;
+  }
 `
