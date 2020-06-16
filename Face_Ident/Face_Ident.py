@@ -5,4 +5,4 @@ df = DeepFace.find(img_path = "C:/Users/timna/Unknown_Faces/Elon_Musk.jpg", db_p
 if len(df)==0:
     print('I do not know who is it!')
 else:
-    print('It is probably {}!'.format((re.search('Known_Faces[\/\\](.*)\/.*$',df.loc[0,'identity'])).group(1))) #Выводится изображение на экран
+    print('It is probably {}!'.format((re.search('Known_Faces[\/\\](.*)\/.*$',df.loc[0,'identity'])).group(1))) #Выводится предположение на экран
